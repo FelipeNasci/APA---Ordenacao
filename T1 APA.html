@@ -41,8 +41,8 @@
 
 						array[j+1] = array[j];
 						j = j - 1;
-						array[j+1] = pivot;
 					}
+					array[j+1] = pivot;		// Evita realizar substituicao desnecessaria
 				}
 
 				return array;
