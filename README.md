@@ -1,11 +1,11 @@
 # APA---Ordenacao
 Algoritmos de ordenação para a disciplina de ANÁLISE E PROJETO DE ALGORITMOS
 
-### [Como usar a aplicação]()
+### [Como usar a aplicação](https://github.com/FelipeNasci/APA---Ordenacao#como-usar-a-aplica%C3%A7%C3%A3o-1)
 
-### [Insertion Sort]()
+### [Insertion Sort](https://github.com/FelipeNasci/APA---Ordenacao#insertion-sort-1)
 
-### [Selection Sort]()
+### [Selection Sort](https://github.com/FelipeNasci/APA---Ordenacao#selection-sort-1)
 
 # Como usar a aplicação
 ```
@@ -14,7 +14,7 @@ Algoritmos de ordenação para a disciplina de ANÁLISE E PROJETO DE ALGORITMOS
 3 - Insira os números a serem ordenados no campo entrada
 4 - Click em Sort para receber o resultado
 ```
-![insertData](link)
+![insertData](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/comInsertion.PNG?raw=true)
 
 # Insertion Sort
 
@@ -22,11 +22,11 @@ Iniciamos a partir da segunda posição do vetor e guardamos este valor em uma v
 
 Após armazenar o valor no pivôr, comparamos este número com os valores das posições anteriores a fim de aloca-lo na posição correta
 
-![insertion](link)
+![insertion](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/insertion.gif?raw=true)
 
 ## Análise assintótica do InsertionSort
 
-![analiseAssintotica]()
+![analiseAssintotica](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/analiseAssintotica.jpg?raw=true)
 
 ```
 (n + 1) * ( 2 + (2n * const) + 1 )
@@ -63,6 +63,6 @@ vetor[i] = aux			//armazena o valor na posição que o menor estava
 
 Este procedimento é realizado até a penúltima posição do vetor
 
-![selection](link)
+![selection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/selectionSort.gif?raw=true)
 
-![selection](link)
+![selection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/selectionSort1.gif?raw=true)
