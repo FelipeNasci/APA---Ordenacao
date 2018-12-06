@@ -60,8 +60,7 @@ aux 	 = vetor[0]		//Guarda o que tinha na primeira posição
 vetor[0] = vetor[i]		//armazena o menor valor na primeira posição
 vetor[i] = aux			//armazena o valor na posição que o menor estava
 ```
-
-Este procedimento é realizado até a penúltima posição do vetor
+Após realizar a troca de valores realizamos o mesmo procedimento a partir da posiçãoInicial + 1 (este procedimento é realizado até a penúltima posição do vetor)
 
 ![selection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/selectionSort.gif?raw=true)
 
