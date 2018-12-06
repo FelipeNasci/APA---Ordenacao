@@ -7,7 +7,7 @@ Algoritmos de ordenação para a disciplina de ANÁLISE E PROJETO DE ALGORITMOS
 
 ### [Selection Sort](https://github.com/FelipeNasci/APA---Ordenacao#selection-sort-1)
 
-# Como usar a aplicação
+## Como usar a aplicação
 ```
 1 - Abra o arquivo .HTML com seu navegador padrão
 2 - Informe o algoritmo que deseja utilizar (SelectionSort ou InsertionSort)
@@ -16,7 +16,7 @@ Algoritmos de ordenação para a disciplina de ANÁLISE E PROJETO DE ALGORITMOS
 ```
 ![insertData](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/comInsertion.PNG?raw=true)
 
-# Insertion Sort
+## Insertion Sort
 
 Iniciamos a partir da segunda posição do vetor e guardamos este valor em uma variável chamada "pivôr" (esta variável será útil para as comparações para saber se um valor é maior que o outro).
 
@@ -24,9 +24,9 @@ Após armazenar o valor no pivôr, comparamos este número com os valores das po
 
 ![insertion](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/insertion.gif?raw=true)
 
-## Análise assintótica do InsertionSort
+#### Análise assintótica do InsertionSort
 
-![analiseAssintotica](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/analiseAssintotica.jpg?raw=true)
+![analiseAssintoticaInsertion](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/analiseAssintoticaInsertion.jpg?raw=true)
 
 ```
 (n + 1) * ( 2 + (2n * const) + 1 )
@@ -44,13 +44,13 @@ Removendo todas as constantes
 n² + n
 ```
 
-### Como a complexidade para o pior caso sempre é medida utilizando o n de maior grau temos que a complexidade do Insertion Sort é:
+#### Como a complexidade para o pior caso sempre é medida utilizando o n de maior grau temos que a complexidade do Insertion Sort é:
 
 ```
 O(n²)
 ```
 
-# Selection Sort
+## Selection Sort
 
 Percorremos todo o vetor a partir da primeira posição em busca do menor número e o alocamos na primeira posição
 
@@ -66,3 +66,23 @@ Este procedimento é realizado até a penúltima posição do vetor
 ![selection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/selectionSort.gif?raw=true)
 
 ![selection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/selectionSort1.gif?raw=true)
+
+#### Análise assintótica do InsertionSort
+
+![analiseAssintoticaSelection](https://github.com/FelipeNasci/APA---Ordenacao/blob/master/imagens/analiseAssintoticaSelection.jpg?raw=true)
+
+```
+2 + (n - 1) * ( 4c*n + 4)
+2 + 4cn² + 4n - 4cn - 4
+
+//retirando as constantes
+
+n² + n - n
+n²
+```
+
+#### Logo temos que a complexidade do Selection Sort é:
+
+```
+O(n²)
+```
