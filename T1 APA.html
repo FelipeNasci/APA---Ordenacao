@@ -14,6 +14,8 @@
 			<p>Ordenar com:</p>
 			<input type="radio" name="radioSort" value="1" /> Insertion Sort
 			<input type="radio" name="radioSort" value="2"  /> Selection Sort
+			<input type="radio" name="radioSort" value="3"  /> Quick Sort
+			<input type="radio" name="radioSort" value="4"  /> Merge Sort
 
 			<br>
 
@@ -76,8 +78,101 @@
 
 			}
 
+
+			function quickSort(array, inicio, tamanho){
+				esqSort(array, inicio, tamanho);
+				dirSort(array, inicio, tamanho);
+
+				quickSort(array, inicio, tamanho);
+				return array;
+			}
+
+
+			function esqSort(array, inicio, tamanho){
+
+				fim = tamanho - 1;
+
+				posPivot = tamanho - 1;
+				pivot = array[posPivot];
+
+				if(inicio >= fim)
+					return array;
+
+				while (inicio < fim){
+
+					inicio = dir(array, inicio, pivot);
+					fim = esq(array, fim, pivot);
+
+					if(inicio < fim){
+						array = troca( array, inicio, fim );
+					}
+				}
+
+				//if(array[inicio] > pivot)
+					array = troca( array, inicio, posPivot );
+
+				array = quickSort(array, 0, inicio);
+			}
+
+
+
+			function dirSort(array, inicio, tamanho){
+
+				fim = tamanho - 1 + inicio;
+
+				posPivot = fim;
+				//
+				pivot = array[posPivot];
+
+				if(inicio >= fim)
+					return array;
+
+				while (inicio < fim){
+
+					inicio = dir(array, inicio, pivot);
+					fim = esq(array, fim, pivot);
+
+					if(inicio < fim){
+						array = troca( array, inicio, fim );
+					}
+				}
+
+				//if(array[inicio] > pivot)
+					array = troca( array, inicio, posPivot );
+
+				array = quickSort(array, inicio, array.length - inicio);
+
+				return array;
+
+			}
+
+			function dir(array, inicio, pivot){
+
+				while(array[inicio] <= pivot && inicio < array.length){
+					inicio = inicio + 1;
+				}
+				return inicio
+			}
+
+			function esq(array, fim, pivot){
+				while(array[fim] >= pivot && fim >= 0){
+					fim = fim - 1;
+				}
+				return fim;
+			}
+
+			function troca(array, i, j){
+
+				aux = array[i];
+				array[i] = array[j];
+				array[j] = aux;
+
+				return array;
+			}
+
 			function captura(){
-				var entrada = document.entrada.in.value;
+				//var entrada = document.entrada.in.value;
+				var entrada = "9 5 1 7 4 2 6";
 				ordena( entrada.split(" ") );
 			}
 			
@@ -90,6 +185,9 @@
 							break;
 					case "2": resultado(selectionSort(array) );
 							break;
+					case "3": resultado(quickSort(array, 0, array.length) );
+							break;
+
 				}
 
 			}
