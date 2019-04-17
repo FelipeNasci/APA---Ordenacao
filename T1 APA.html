@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<script src="Sort.js"></script>
 		<title>APA - Ordenação</title>
 	</head>
 
@@ -14,8 +15,6 @@
 			<p>Ordenar com:</p>
 			<input type="radio" name="radioSort" value="1" /> Insertion Sort
 			<input type="radio" name="radioSort" value="2"  /> Selection Sort
-			<input type="radio" name="radioSort" value="3"  /> Quick Sort
-			<input type="radio" name="radioSort" value="4"  /> Merge Sort
 
 			<br>
 
@@ -28,154 +27,15 @@
 			<input type="text" name="out" size="40"/>
 		</form>
 
-		<script>
+
+		<script type="text/javascript">
 			
-			function insertionSort(array){
-
-				var pivot, i, j;
-
-				for (i = 1; i < array.length ; i ++){
-
-					pivot = array[i];
-					j = i - 1;
-
-					while(j >= 0 && array[j] > pivot){
-
-						array[j+1] = array[j];
-						j = j - 1;
-					}
-					array[j+1] = pivot;		// Evita realizar substituicao desnecessaria
-				}
-
-				return array;
-			}
-
-			function selectionSort(array){
-
-				var i, j, aux, menorValor;
-
-				for (i = 0; i < array.length - 1; i++){
-
-					aux = i; //posicao do menor valor
-
-					for (j = i + 1; j < array.length; j++)
-
-						//Se encontrar um valor menor, substitua
-						if( array[j] < array[aux] )	
-							aux = j;
-
-					//Se o menor valor for diferente do array[i], troque
-					//O if foi feito para nao trocar numeros repetidos
-					if (array[i] != array[aux]){
-						menorValor = array[aux];
-						array[aux] = array[i];
-						array[i] = menorValor;
-					}
-
-				}
-
-				return array;
-
-			}
-
-
-			function quickSort(array, inicio, tamanho){
-				esqSort(array, inicio, tamanho);
-				dirSort(array, inicio, tamanho);
-
-				quickSort(array, inicio, tamanho);
-				return array;
-			}
-
-
-			function esqSort(array, inicio, tamanho){
-
-				fim = tamanho - 1;
-
-				posPivot = tamanho - 1;
-				pivot = array[posPivot];
-
-				if(inicio >= fim)
-					return array;
-
-				while (inicio < fim){
-
-					inicio = dir(array, inicio, pivot);
-					fim = esq(array, fim, pivot);
-
-					if(inicio < fim){
-						array = troca( array, inicio, fim );
-					}
-				}
-
-				//if(array[inicio] > pivot)
-					array = troca( array, inicio, posPivot );
-
-				array = quickSort(array, 0, inicio);
-			}
-
-
-
-			function dirSort(array, inicio, tamanho){
-
-				fim = tamanho - 1 + inicio;
-
-				posPivot = fim;
-				//
-				pivot = array[posPivot];
-
-				if(inicio >= fim)
-					return array;
-
-				while (inicio < fim){
-
-					inicio = dir(array, inicio, pivot);
-					fim = esq(array, fim, pivot);
-
-					if(inicio < fim){
-						array = troca( array, inicio, fim );
-					}
-				}
-
-				//if(array[inicio] > pivot)
-					array = troca( array, inicio, posPivot );
-
-				array = quickSort(array, inicio, array.length - inicio);
-
-				return array;
-
-			}
-
-			function dir(array, inicio, pivot){
-
-				while(array[inicio] <= pivot && inicio < array.length){
-					inicio = inicio + 1;
-				}
-				return inicio
-			}
-
-			function esq(array, fim, pivot){
-				while(array[fim] >= pivot && fim >= 0){
-					fim = fim - 1;
-				}
-				return fim;
-			}
-
-			function troca(array, i, j){
-
-				aux = array[i];
-				array[i] = array[j];
-				array[j] = aux;
-
-				return array;
-			}
-
 			function captura(){
 				//var entrada = document.entrada.in.value;
-				var entrada = "9 5 1 7 4 2 6";
-				ordena( entrada.split(" ") );
+				var entrada = [101, 0, 10, 9, 8, 5, 1, 2, 3];
+				ordena( entrada );
 			}
-			
+
 			function ordena(array){
 
 				var opcao = document.entrada.radioSort.value;
@@ -184,8 +44,6 @@
 					case "1": resultado(insertionSort(array) );
 							break;
 					case "2": resultado(selectionSort(array) );
-							break;
-					case "3": resultado(quickSort(array, 0, array.length) );
 							break;
 
 				}
