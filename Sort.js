@@ -33,7 +33,8 @@ function selectionSort(array){
 				aux = j;
 
 		//Se o menor valor for diferente do array[i], troque
-		//O if foi feito para nao trocar numeros repetidos
+		//O if foi feito para nao haver trocas entre numeros
+		//iguais, onde o menor valor já se encontra em sua posição
 		if (array[i] != array[aux]){
 			menorValor = array[aux];
 			array[aux] = array[i];
